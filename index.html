@@ -298,6 +298,17 @@ footer p{color:var(--muted)}
 .dev .hexes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .dev .hex{aspect-ratio:1.15;max-width:100%;background:var(--ink);color:var(--paper);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%);display:grid;place-items:center;text-align:center;font-family:var(--f-display);font-weight:700;font-size:clamp(1rem,1.6vw + .4rem,1.7rem);line-height:1.25;padding:0 18%}
 @media (max-width:640px){.dev{grid-template-columns:72px minmax(0,1fr) 72px;gap:8px}.dev .lab{min-height:64px;font-size:.95rem;border-radius:12px}.dev .arrow{padding:0 26px;font-size:.8rem;height:56px}.dev .hexes{gap:6px}.dev .hex{font-size:.9rem;padding:0 12%}}
+
+.think{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.think .card{border-top:6px solid var(--teal)}
+.think .card.link{border-top-color:var(--orange)}
+.think .card h3{font-size:clamp(1.3rem,1.4vw + .8rem,1.7rem)}
+.think .eg{display:flex;flex-wrap:wrap;gap:8px}
+.think .eg span{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font-size:.92rem}
+.spec{grid-column:1 / -1;display:grid;gap:8px}
+.spec .bar{height:16px;border-radius:999px;background:linear-gradient(90deg,var(--teal),var(--amber),var(--orange))}
+.spec .ends{display:flex;justify-content:space-between;font-weight:700;font-size:.95rem}
+@media (max-width:640px){.think{grid-template-columns:1fr}}
 </style>
 
 </head>
@@ -379,6 +390,30 @@ footer p{color:var(--muted)}
   </div>
 
   <div class="blk-head" style="margin-top:44px">
+    <h3 style="font-size:clamp(1.4rem,2vw + .7rem,2rem)">大腦的兩種思考模式：深度運作與連結機制</h3>
+    <p>兩種模式不是只能選一種，大部分活動都會混在一起用。差別在比重：連結機制比深度運作更能帶動情緒與懷舊，長輩通常比較喜歡，也能降低認知思考的負荷和參與門檻。</p>
+  </div>
+  <div class="think">
+    <div class="card">
+      <span class="pill">深度運作</span>
+      <h3>要專心想、一步一步算</h3>
+      <p class="sub">需要專注、記住規則、計算或推理，答案只有一個。能訓練執行功能，但負荷高，答錯容易有挫折感。</p>
+      <div class="eg"><span>計算題</span><span>數字加總</span><span>記憶考試</span><span>規則多的遊戲</span></div>
+    </div>
+    <div class="card link">
+      <span class="pill o">連結機制</span>
+      <h3>看到、聽到，就想起來</h3>
+      <p class="sub">由一個線索聯想到相關的記憶、經驗與感受，沒有標準答案，說什麼都能接下去聊。容易帶出情緒與懷舊，人人都有話說。</p>
+      <div class="eg"><span>聽前奏接唱</span><span>看老藝人聊當年</span><span>看小吃想家鄉</span><span>老物品說用途</span></div>
+    </div>
+    <div class="spec">
+      <div class="bar" aria-hidden="true"></div>
+      <div class="ends"><span style="color:var(--teal)">深度運作多</span><span style="color:var(--orange)">連結機制多</span></div>
+      <p class="hint">設計建議：以連結機制開場、暖身，讓每位長輩都先說得出話；主活動再依程度加入一點深度運作。例如「老藝人猜謎」答對後接著聊他的歌、他的戲，就是從深度轉回連結。</p>
+    </div>
+  </div>
+
+  <div class="blk-head" style="margin-top:44px">
     <h3 style="font-size:clamp(1.4rem,2vw + .7rem,2rem)">功能性認知：四大認知遊戲機制</h3>
     <p>大部分認知遊戲都是這四種機制的組合。設計時先決定用哪一種，再依長輩程度調整選項數量與提示多寡；後面的卡牌教案也用這四種來設計玩法。</p>
   </div>
@@ -413,7 +448,7 @@ footer p{color:var(--muted)}
     <div class="card">
       <h3>上半場：從長輩條件到教案</h3>
       <ol>
-        <li><div>打破迷思<span>學生活動為什麼到機構會卡住；長輩對「玩」的需求、四大認知遊戲機制，以及從人類發展看活動難度</span></div></li>
+        <li><div>打破迷思<span>學生活動為什麼到機構會卡住；長輩對「玩」的需求、深度運作與連結機制、四大認知遊戲機制，以及從人類發展看活動難度</span></div></li>
         <li><div>用說的下指令<span>Typeless、ChatGPT／Gemini 麥克風、電腦聽寫，用說話公式描述一位長輩</span></div></li>
         <li><div>教案提示詞產生器<span>勾選長輩條件 → 產生提示詞 → 貼到 ChatGPT 或 Gemini 產出教案</span></div></li>
         <li><div>AI 當督導挑錯<span>請 AI 用督導與長輩本人的角度檢查，再用適配度檢核表自評</span></div></li>
